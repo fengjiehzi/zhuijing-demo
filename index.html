@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0A0D12">
   <meta name="description" content="追竞：关注你的热爱，不错过下一场。电竞赛程与提醒小程序交互 Demo。">
   <title>追竞 · 每一场热爱，都准时在场</title>
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
   <!-- 外层：桌面浏览器里居中手机容器，手机里全屏 -->
@@ -24,11 +24,11 @@
       <main id="main" class="app-main" tabindex="-1"></main>
       <!-- 底部 tab bar -->
       <nav id="tab-bar" class="tab-bar" aria-label="主导航"></nav>
+      <div id="toast" role="status" aria-live="polite"></div>
     </div>
   </div>
   <!-- 弹窗（小程序风格 modal） -->
   <dialog id="modal" aria-labelledby="modal-title"></dialog>
-  <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="app.js?v=5"></script>
+  <script type="module" src="app.js?v=6"></script>
 </body>
 </html>
