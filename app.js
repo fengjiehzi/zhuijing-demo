@@ -157,8 +157,7 @@ function schedulePage() {
     </div>
 
     <div class="demo-footer">
-      示例赛程 · 固定演示时间 2026.10.27 12:00<br>
-      <a href="prd.html" target="_blank">查看完整 PRD →</a>
+      示例赛程 · 固定演示时间 2026.10.27 12:00
     </div>
   `;
 }
