@@ -167,7 +167,7 @@ function matchCard(match) {
   const game = entity(match.gameId);
   const reasons = followReasons(match, store.following);
   const reminder = store.reminders.find(r => r.matchId === match.id);
-  return `<div class="match-card" data-match="${match.id}">
+  return `<div class="match-card">
     <div class="match-card-head">
       <i class="game-dot" style="background:${game.color}"></i>
       <span>${game.name}</span>
@@ -216,7 +216,7 @@ function followingPage() {
     </div>
 
     <div class="follow-tabs" role="tablist">
-      ${tabs.map(([id, label]) => `<button data-follow-type="${id}" class="${followType === id ? 'active' : ''}">${label}${countsOfFollowed(id) ? `<span class="count-chip">${countsOfFollowed(id)}</span>` : ''}</button>`).join('')}
+      ${tabs.map(([id, label]) => `<button data-action="follow-type" data-id="${id}" class="${followType === id ? 'active' : ''}" aria-pressed="${followType === id}">${label}${countsOfFollowed(id) ? `<span class="count-chip">${countsOfFollowed(id)}</span>` : ''}</button>`).join('')}
     </div>
 
     <div class="section-header">
