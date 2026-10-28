@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#111412">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="追竞：关注你的热爱，不错过下一场。电竞赛程与提醒小程序交互 Demo。">
   <title>追竞 · 每一场热爱，都准时在场</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
-  <div class="shell">
-    <aside class="sidebar">
-      <a href="#schedule" class="brand" aria-label="追竞首页"><span class="brand-mark">Z<span>J</span></span><span>追竞<small>FOLLOW YOUR GAME</small></span></a>
-      <div class="nav-caption">我的观赛空间</div>
-      <nav id="navigation" aria-label="主导航"></nav>
-      <div class="sidebar-bottom"><span class="outline-label">INTERACTIVE DEMO</span><p>每一场热爱，<br>都准时在场。</p><a href="prd.html" target="_blank" rel="noopener">查看产品需求文档 ↗</a><button class="text-button muted" data-action="reset">重置体验数据</button></div>
-    </aside>
-    <div class="workspace">
-      <header class="topbar"><a href="#schedule" class="mobile-brand">追竞<span class="lime">.</span></a><span class="topline">你的比赛日，已就位 <span class="tiny-dot"></span></span><div class="top-right"><span class="demo-tag">交互 Demo</span><span class="avatar" aria-label="体验用户">竞</span></div></header>
-      <main id="main" tabindex="-1"></main>
-      <footer><span>示例赛程与虚构阵容 · 非实时数据<br>固定演示时钟：2026.10.27 12:00 · 北京时间（UTC+8）</span><div><a href="prd.html" target="_blank" rel="noopener">产品 PRD ↗</a><button class="text-button muted" data-action="reset">重置体验</button></div></footer>
+  <!-- 外层：桌面浏览器里居中手机容器，手机里全屏 -->
+  <div class="device-shell">
+    <div class="app">
+      <!-- 顶部：状态栏 + 导航栏（胶囊按钮占位） -->
+      <header class="app-header">
+        <div class="status-bar"></div>
+        <div class="nav-bar">
+          <span class="nav-title">追竞</span>
+          <span class="capsule" aria-hidden="true"></span>
+        </div>
+      </header>
+      <!-- 主内容区 -->
+      <main id="main" class="app-main" tabindex="-1"></main>
+      <!-- 底部 tab bar -->
+      <nav id="tab-bar" class="tab-bar" aria-label="主导航"></nav>
     </div>
   </div>
+  <!-- 弹窗（小程序风格 modal） -->
   <dialog id="modal" aria-labelledby="modal-title"></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="app.js?v=2"></script>
+  <script type="module" src="app.js?v=3"></script>
 </body>
 </html>
-
