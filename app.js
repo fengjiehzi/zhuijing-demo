@@ -77,8 +77,11 @@ function renderTabBar() {
 /* ===== 赛程页 ===== */
 function schedulePage() {
   const selected = selectMatches(matches, filters, store.following, entities);
-  const featured = matches[0];
-  const fg = entity(featured.gameId);
+  // 焦点比赛：只取用户关注了战队或选手的最近一场，未关注则不显示 banner
+  const featured = [...matches]
+    .sort((a, b) => Date.parse(a.startAt) - Date.parse(b.startAt))
+    .find(m => [...m.teamIds, ...m.playerIds].some(id => store.following.includes(id)));
+  const fg = featured && entity(featured.gameId);
   const days = [
     ['0', '今天', '10.27'],
     ['1', '明天', '10.28'],
@@ -93,8 +96,9 @@ function schedulePage() {
       <div class="subtitle">你关心的比赛都在这里</div>
     </div>
 
+    ${featured ? `
     <button class="featured" data-action="detail" data-id="${featured.id}">
-      <span class="featured-tag">今日焦点</span>
+      <span class="featured-tag">关注焦点</span>
       <div class="featured-teams">
         <div class="featured-team">
           <div class="name">${entity(featured.teamIds[0]).name}</div>
@@ -107,10 +111,10 @@ function schedulePage() {
         </div>
       </div>
       <div class="featured-foot">
-        <span class="featured-time">${icon('clock')}今晚 <b>${time(featured.startAt)}</b> 开赛</span>
+        <span class="featured-time">${icon('clock')}${date(featured.startAt)} <b>${time(featured.startAt)}</b> 开赛</span>
         <span class="featured-cta">查看详情 ${icon('arrow')}</span>
       </div>
-    </button>
+    </button>` : ''}
 
     <div class="filter-bar">
       <div class="platform-seg" role="tablist">
