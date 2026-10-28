@@ -77,11 +77,8 @@ function renderTabBar() {
 /* ===== 赛程页 ===== */
 function schedulePage() {
   const selected = selectMatches(matches, filters, store.following, entities);
-  const counts = {
-    'all': games.length,
-    'pc': games.filter(g => g.platform === 'pc').length,
-    'mobile': games.filter(g => g.platform === 'mobile').length
-  };
+  const featured = matches[0];
+  const fg = entity(featured.gameId);
   const days = [
     ['0', '今天', '10.27'],
     ['1', '明天', '10.28'],
@@ -92,9 +89,28 @@ function schedulePage() {
 
   main.innerHTML = `
     <div class="page-title">
-      <h1>赛程</h1>
+      <h1>赛程<span style="color:var(--accent)">.</span></h1>
       <div class="subtitle">你关心的比赛都在这里</div>
     </div>
+
+    <button class="featured" data-action="detail" data-id="${featured.id}">
+      <span class="featured-tag">今日焦点</span>
+      <div class="featured-teams">
+        <div class="featured-team">
+          <div class="name">${entity(featured.teamIds[0]).name}</div>
+          <div class="game"><i style="background:${fg.color}"></i>${fg.name}</div>
+        </div>
+        <span class="featured-vs">VS</span>
+        <div class="featured-team" style="text-align:right">
+          <div class="name">${entity(featured.teamIds[1]).name}</div>
+          <div class="game" style="justify-content:flex-end">${featured.format}</div>
+        </div>
+      </div>
+      <div class="featured-foot">
+        <span class="featured-time">${icon('clock')}今晚 <b>${time(featured.startAt)}</b> 开赛</span>
+        <span class="featured-cta">查看详情 ${icon('arrow')}</span>
+      </div>
+    </button>
 
     <div class="filter-bar">
       <div class="platform-seg" role="tablist">
@@ -190,7 +206,7 @@ function followingPage() {
   ];
   main.innerHTML = `
     <div class="page-title">
-      <h1>我的关注</h1>
+      <h1>我的关注<span style="color:var(--accent)">.</span></h1>
       <div class="subtitle">让喜欢的战队和选手不再缺席</div>
       <span class="title-badge">已关注 ${store.following.length} 项</span>
     </div>
@@ -237,7 +253,7 @@ function renderEntityItems() {
     const meta = e.type === 'game' ? (e.platform === 'pc' ? '端游电竞' : '手游电竞')
       : entity(e.gameId).name + (e.type === 'player' ? ` · ${entity(e.teamId).name}` : '');
     return `<div class="entity-item">
-      <div class="entity-avatar" style="background:${e.type === 'game' ? e.color + '22' : 'var(--brand-light)'};color:${e.type === 'game' ? e.color : 'var(--brand-dark)'}">${e.short}</div>
+      <div class="entity-avatar" style="background:${e.type === 'game' ? e.color + '22' : 'var(--accent-dim)'};color:${e.type === 'game' ? e.color : 'var(--accent)'}">${e.short}</div>
       <div class="entity-info">
         <div class="name">${e.name}</div>
         <div class="meta">${meta}</div>
@@ -252,7 +268,7 @@ function remindersPage() {
   const sorted = [...store.reminders].sort((a, b) => a.at - b.at);
   main.innerHTML = `
     <div class="page-title">
-      <h1>提醒中心</h1>
+      <h1>提醒中心<span style="color:var(--accent)">.</span></h1>
       <div class="subtitle">提前一点，刚好赶上心动的瞬间</div>
     </div>
 
