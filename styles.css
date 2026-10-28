@@ -8,11 +8,11 @@
   --text: #EDF1F6;            /* 主文字 */
   --text-2: #8B95A3;          /* 次要 */
   --text-3: #5C6672;          /* 辅助 */
-  --accent: #A6F750;          /* 电光青柠 */
-  --accent-2: #C8FF7A;
-  --accent-dim: rgba(166,247,80,.12);
-  --accent-glow: rgba(166,247,80,.28);
-  --danger: #FF5C5C;
+  --accent: #FF4655;          /* 电竞红 */
+  --accent-2: #FF8A94;
+  --accent-dim: rgba(255,70,85,.12);
+  --accent-glow: rgba(255,70,85,.28);
+  --danger: #FF7A45;          /* 橙红，与主色区分 */
   --warning: #FFA83D;
   --radius: 14px;
   --radius-sm: 10px;
@@ -191,11 +191,11 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
 }
 .btn:active { opacity: .85; transform: scale(.98); }
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), #8FE03C);
-  color: #0B1405;
+  background: linear-gradient(135deg, var(--accent), #FF2D55);
+  color: #2B0A0E;
   box-shadow: 0 4px 20px var(--accent-glow);
 }
-.btn-secondary { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(166,247,80,.3); }
+.btn-secondary { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(255,70,85,.3); }
 .btn-ghost { background: transparent; color: var(--text-2); }
 .btn-full { width: 100%; }
 .btn-sm { padding: 7px 14px; font-size: 12px; min-height: 34px; border-radius: 8px; }
@@ -225,7 +225,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   padding: 3px 10px;
   border-radius: 6px;
   margin-top: 10px;
-  border: 1px solid rgba(166,247,80,.2);
+  border: 1px solid rgba(255,70,85,.2);
 }
 
 .section-header {
@@ -263,7 +263,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 160% at 85% 0%, rgba(166,247,80,.14), transparent 55%),
+    radial-gradient(120% 160% at 85% 0%, rgba(255,70,85,.14), transparent 55%),
     linear-gradient(150deg, var(--surface-2), var(--surface));
   border: 1px solid var(--line);
   cursor: pointer;
@@ -328,7 +328,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   font-style: italic;
   color: var(--accent);
   padding: 4px 10px;
-  border: 1px solid rgba(166,247,80,.35);
+  border: 1px solid rgba(255,70,85,.35);
   border-radius: 8px;
   background: var(--accent-dim);
   flex-shrink: 0;
@@ -393,7 +393,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
 }
 .platform-seg button.active {
   background: var(--accent);
-  color: #0B1405;
+  color: #2B0A0E;
   font-weight: 700;
   box-shadow: 0 2px 12px var(--accent-glow);
 }
@@ -438,7 +438,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   transition: all .15s;
 }
 .mine-switch input:checked + .switch-track { background: var(--accent); border-color: var(--accent); }
-.mine-switch input:checked + .switch-track::after { transform: translateX(16px); background: #0B1405; }
+.mine-switch input:checked + .switch-track::after { transform: translateX(16px); background: #2B0A0E; }
 
 .day-scroll {
   display: flex;
@@ -468,10 +468,10 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
 .day-btn.active {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0B1405;
+  color: #2B0A0E;
   box-shadow: 0 2px 14px var(--accent-glow);
 }
-.day-btn.active b, .day-btn.active span { color: #0B1405; }
+.day-btn.active b, .day-btn.active span { color: #2B0A0E; }
 .day-btn.active span { opacity: .75; }
 
 .search-bar {
@@ -605,13 +605,13 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   min-height: 34px;
   background: var(--accent-dim);
   color: var(--accent);
-  border: 1px solid rgba(166,247,80,.3);
+  border: 1px solid rgba(255,70,85,.3);
   transition: all .15s;
 }
 .remind-btn svg { width: 14px; height: 14px; }
 .remind-btn.active {
   background: var(--accent);
-  color: #0B1405;
+  color: #2B0A0E;
   border-color: var(--accent);
   box-shadow: 0 2px 14px var(--accent-glow);
 }
@@ -624,7 +624,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   margin-top: 10px;
   padding: 7px 11px;
   background: var(--accent-dim);
-  border: 1px solid rgba(166,247,80,.15);
+  border: 1px solid rgba(255,70,85,.15);
   border-radius: 8px;
 }
 .match-reason svg { width: 12px; height: 12px; }
@@ -665,7 +665,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   top: 7px;
   right: 10px;
   background: var(--accent);
-  color: #0B1405;
+  color: #2B0A0E;
   font-size: 10px;
   font-weight: 700;
   min-width: 16px;
@@ -726,7 +726,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
 }
 .follow-btn.active {
   background: var(--accent);
-  color: #0B1405;
+  color: #2B0A0E;
   border-color: var(--accent);
   box-shadow: 0 2px 12px var(--accent-glow);
 }
@@ -760,7 +760,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   border-radius: 5px;
   background: var(--accent-dim);
   color: var(--accent);
-  border: 1px solid rgba(166,247,80,.2);
+  border: 1px solid rgba(255,70,85,.2);
 }
 .reminder-match {
   font-size: 15px;
@@ -797,7 +797,7 @@ svg { width: 20px; height: 20px; flex-shrink: 0; vertical-align: middle; }
   height: 68px;
   margin: 0 auto 16px;
   background: var(--accent-dim);
-  border: 1px solid rgba(166,247,80,.2);
+  border: 1px solid rgba(255,70,85,.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -885,8 +885,8 @@ dialog .form-submit {
   padding: 14px;
   font-size: 15px;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--accent), #8FE03C);
-  color: #0B1405;
+  background: linear-gradient(135deg, var(--accent), #FF2D55);
+  color: #2B0A0E;
   border-radius: 10px;
   box-shadow: 0 4px 20px var(--accent-glow);
 }
@@ -941,7 +941,7 @@ dialog .form-submit {
 .detail-team-row .team-col .name { font-size: 14px; font-weight: 700; margin-bottom: 7px; }
 .detail-team-row .vs-text {
   font-size: 13px; color: var(--accent); font-weight: 800; font-style: italic;
-  padding: 4px 10px; border: 1px solid rgba(166,247,80,.35);
+  padding: 4px 10px; border: 1px solid rgba(255,70,85,.35);
   border-radius: 8px; background: var(--accent-dim);
 }
 .detail-time-row {
@@ -951,7 +951,7 @@ dialog .form-submit {
   gap: 8px;
   padding: 13px;
   background: var(--accent-dim);
-  border: 1px solid rgba(166,247,80,.2);
+  border: 1px solid rgba(255,70,85,.2);
   border-radius: 10px;
   margin-bottom: 18px;
   font-size: 13px;
@@ -1008,8 +1008,8 @@ dialog .form-submit {
 }
 .notification-head .mini-avatar {
   width: 26px; height: 26px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--accent), #8FE03C);
-  color: #0B1405;
+  background: linear-gradient(135deg, var(--accent), #FF2D55);
+  color: #2B0A0E;
   display: flex; align-items: center; justify-content: center;
   font-size: 12px; font-weight: 800;
 }
@@ -1044,7 +1044,7 @@ dialog .form-submit {
   transform: translateX(-50%) translateY(16px);
   background: rgba(20,26,34,.96);
   color: var(--accent);
-  border: 1px solid rgba(166,247,80,.25);
+  border: 1px solid rgba(255,70,85,.25);
   padding: 11px 20px;
   border-radius: 22px;
   font-size: 13px;
